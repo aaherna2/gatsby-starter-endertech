@@ -20,15 +20,17 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^15.13.1",
     "@sindresorhus/slugify": "^1.1.0",
     "debounce": "^1.2.1",
     "dotenv": "^10.0.0",
     "gatsby": "^4.19.0",
     "gatsby-plugin-gatsby-cloud": "^4.0.0",
     "gatsby-plugin-google-analytics": "^4.0.0",
-    "gatsby-plugin-image": "^2.0.0",
+    "gatsby-plugin-image": "^2.24.0",
     "gatsby-plugin-sharp": "^4.0.0",
     "gatsby-plugin-sitemap": "^5.0.0",
+    "gatsby-source-contentful": "^7.22.0",
     "gatsby-source-filesystem": "^4.0.0",
     "gatsby-source-shopify": "^6.0.0",
     "gatsby-transformer-sharp": "^4.0.0",

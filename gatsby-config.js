@@ -15,6 +15,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-source-contentful",
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+    {
       resolve: "gatsby-source-shopify",
       options: {
         password: process.env.SHOPIFY_ADMIN_ACCESS_TOKEN,

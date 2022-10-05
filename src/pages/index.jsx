@@ -18,39 +18,41 @@ export const query = graphql`
         ...ProductCard
       }
     }
+    homepage {
+    title
+    description
+    image {
+      alt
+      id
+      url
+    }
+  }
   }
 `
-function Hero (props) {
+function Hero ({props}) {
+  console.log('props', props, typeof props, props?.title)
   return (
     <div className={container}>
-      <h1 className={intro}>Welcome to the EnderCloud Store.</h1>
-      {!!process.env.GATSBY_DEMO_STORE && (
-        <>
-          <p className={callOut}>
-            Shop all your Endertech merch here!
-          </p>
-          <p className={callToAction}>
-            Hook it up to your own Shopify store data and start customizing in
-            minutes by deploying it to Gatsby Cloud for free. Grab your Shopify
-            store credentials and
-            <a href="https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-shopify&utm_campaign=shopify-starter">
-              <img
-                src="https://www.gatsbyjs.com/deploynow.png"
-                alt="Deploy to Gatsby Cloud"
-                className={deployButton}
-              />
-            </a>
-          </p>
-        </>
-      )}
+      <h1 className={intro}>{props.title}</h1>
     </div>
   )
 }
 
 export default function IndexPage({ data }) {
+  console.log(data)
   return (
     <Layout>
-      <Hero />
+      <Hero props={data.homepage}/>
+      <div style={{display: 'flex', justifyContent: 'center', alignContent: 'center', alignSelf: 'center'}} >
+      <img src={data.homepage.image.url} />
+      </div>
+      <div style={{display: 'flex', justifyContent: 'center', alignContent: 'center', alignSelf: 'center', padding: '0px 400px', marginTop: '50px'}} >
+      <p>
+        {data.homepage.description}
+      </p>
+      </div>
+
+      
       <ProductListing products={data?.shopifyCollection?.products} />
     </Layout>
   )
