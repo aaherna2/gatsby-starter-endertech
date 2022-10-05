@@ -13,7 +13,6 @@ import {
 } from "./product-card.module.css"
 
 export function ProductCard({ product, eager }) {
-  console.log(product)
   const {
     title,
     priceRangeV2,

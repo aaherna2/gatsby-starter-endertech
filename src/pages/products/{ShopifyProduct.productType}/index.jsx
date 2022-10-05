@@ -11,7 +11,6 @@ export default function ProductTypeIndex({
   data: { products },
   pageContext: { productType },
 }) {
-  console.log(products)
   return (
     <Layout>
       <h1 className={title}>{productType}</h1>
